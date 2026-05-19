@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>mysolar.id - The Power of Solar</title>
+<link rel="icon" type="image/png" href="mysolarlogonew.png"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&amp;family=Metropolis:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+     darkMode: "class",
+     theme: {
+      extend: {
+       "colors": {
+           "outline-variant": "#bccbb9",
+           "on-error-container": "#93000a",
+           "secondary-fixed": "#d5e3fd",
+           "tertiary": "#5e5e60",
+           "primary": "#006e2f",
+           "error-container": "#ffdad6",
+           "surface-variant": "#d3e4fe",
+           "on-surface-variant": "#3d4a3d",
+           "on-primary-fixed": "#002109",
+           "inverse-on-surface": "#eaf1ff",
+           "primary-fixed": "#6bff8f",
+           "on-tertiary-fixed": "#1b1c1e",
+           "secondary-container": "#d5e3fd",
+           "on-secondary-container": "#57657b",
+           "tertiary-fixed": "#e3e2e4",
+           "on-tertiary": "#ffffff",
+           "surface-container-lowest": "#ffffff",
+           "primary-fixed-dim": "#4ae176",
+           "surface-container-low": "#eff4ff",
+           "surface-container": "#e5eeff",
+           "inverse-primary": "#4ae176",
+           "inverse-surface": "#213145",
+           "on-primary-fixed-variant": "#005321",
+           "error": "#ba1a1a",
+           "on-secondary-fixed": "#0d1c2f",
+           "on-tertiary-fixed-variant": "#464749",
+           "secondary": "#515f74",
+           "on-primary-container": "#004b1e",
+           "on-secondary-fixed-variant": "#3a485c",
+           "on-primary": "#ffffff",
+           "on-secondary": "#ffffff",
+           "surface": "#f8f9ff",
+           "background": "#f8f9ff",
+           "on-surface": "#0b1c30",
+           "on-tertiary-container": "#3f4042",
+           "surface-bright": "#f8f9ff",
+           "on-error": "#ffffff",
+           "tertiary-fixed-dim": "#c7c6c8",
+           "surface-dim": "#cbdbf5",
+           "secondary-fixed-dim": "#b9c7e0",
+           "surface-tint": "#006e2f",
+           "tertiary-container": "#acabae",
+           "on-background": "#0b1c30",
+           "outline": "#6d7b6c",
+           "primary-container": "#22c55e",
+           "surface-container-highest": "#d3e4fe",
+           "surface-container-high": "#dce9ff"
+       },
+       "borderRadius": {
+           "DEFAULT": "0.125rem",
+           "lg": "0.25rem",
+           "xl": "0.5rem",
+           "full": "0.75rem"
+       },
+       "spacing": {
+           "gutter": "24px",
+           "base": "8px",
+           "section-gap-mobile": "48px",
+           "margin-desktop": "80px",
+           "section-gap-desktop": "80px",
+           "margin-mobile": "20px"
+       },
+       "fontFamily": {
+           "display-lg-mobile": ["Metropolis"],
+           "body-lg": ["DM Sans"],
+           "body-md": ["DM Sans"],
+           "label-sm": ["Metropolis"],
+           "label-md": ["Metropolis"],
+           "display-lg": ["Metropolis"],
+           "headline-md": ["Metropolis"],
+           "headline-lg": ["Metropolis"]
+       },
+       "fontSize": {
+           "display-lg-mobile": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+           "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+           "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+           "label-sm": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.03em", "fontWeight": "500"}],
+           "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+           "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+           "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+           "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}]
+       }
+      }
+     }
+    }
+   </script>
+<style>
+     body {
+       font-family: 'DM Sans', sans-serif;
+       background-color: #f8f9ff; /* surface */
+       color: #0b1c30; /* on-surface */
+     }
+     h1, h2, h3, h4, h5, h6, .font-display, .font-headline, .font-label {
+       font-family: 'Metropolis', sans-serif;
+     }
+   </style>
+    <link rel="stylesheet" href="style.css">
+    <script src="translations.js" defer></script>
+</head>
+<body class="bg-surface text-on-surface antialiased min-h-screen flex flex-col pt-[88px]">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/95 dark:bg-on-surface/95 backdrop-blur-sm border-b border-outline-variant/20">
+  <div class="flex justify-between items-center px-margin-desktop py-5 max-w-[1440px] mx-auto w-full max-md:px-margin-mobile max-md:py-4">
+    <!-- Brand Logo -->
+    <a class="flex items-center" href="index.html">
+      <img src="mysolarlogonew.png" alt="mysolar.id logo" class="h-14 md:h-16 w-auto object-contain hover:opacity-80 transition-all duration-300"/>
+    </a>
+    <!-- Desktop Nav -->
+    <nav class="hidden md:flex gap-8 items-center font-display-lg text-[18px] font-bold tracking-wide">
+      <a class="text-primary border-b-2 border-primary pb-1" href="index.html" data-i18n="nav_home">Home</a>
+      <a class="text-secondary hover:text-primary transition-colors" href="about.html" data-i18n="nav_about">About Us</a>
+      <a class="text-secondary hover:text-primary transition-colors" href="how-it-works.html" data-i18n="nav_how_it_works">How it Works</a>
+      <a class="text-secondary hover:text-primary transition-colors" href="ownership.html" data-i18n="nav_ownership">Ownership</a>
+      <a class="text-secondary hover:text-primary transition-colors" href="contact.html" data-i18n="nav_contact">Contact Us</a>
+    </nav>
+    <!-- Desktop CTA & Lang Switcher -->
+    <div class="flex items-center gap-4">
+      <div class="hidden md:flex items-center gap-2 mr-2">
+        <span class="material-symbols-outlined text-secondary text-[20px]">language</span>
+        <select id="lang-switcher" class="bg-transparent border-none text-[14px] font-bold text-secondary focus:outline-none cursor-pointer">
+          <option value="en">EN</option>
+          <option value="id">ID</option>
+          <option value="zh">CN</option>
+        </select>
+      </div>
+      <a href="contact.html" class="hidden md:block bg-primary text-on-primary font-bold text-[14px] px-6 py-3 rounded-lg btn-premium hover:opacity-80 transition-all duration-300" data-i18n="nav_get_started">Get Started</a>
+      <!-- Mobile Hamburger -->
+      <button id="mobile-menu-btn" class="md:hidden text-primary p-2" aria-label="Open menu">
+        <span class="material-symbols-outlined" style="font-size:28px;">menu</span>
+      </button>
+    </div>
+  </div>
+  <!-- Mobile Dropdown Nav -->
+  <nav id="mobile-nav" class="bg-surface border-t border-outline-variant/20 md:hidden">
+    <a class="text-primary font-bold text-[16px] block px-6 py-4 border-b border-outline-variant/10" href="index.html" data-i18n="nav_home">Home</a>
+    <a class="text-secondary font-bold text-[16px] block px-6 py-4 border-b border-outline-variant/10 hover:text-primary" href="about.html" data-i18n="nav_about">About Us</a>
+    <a class="text-secondary font-bold text-[16px] block px-6 py-4 border-b border-outline-variant/10 hover:text-primary" href="how-it-works.html" data-i18n="nav_how_it_works">How it Works</a>
+    <a class="text-secondary font-bold text-[16px] block px-6 py-4 border-b border-outline-variant/10 hover:text-primary" href="ownership.html" data-i18n="nav_ownership">Ownership</a>
+    <a class="text-secondary font-bold text-[16px] block px-6 py-4 border-b border-outline-variant/10 hover:text-primary" href="contact.html" data-i18n="nav_contact">Contact Us</a>
+    <div class="px-6 py-4 flex flex-col gap-4">
+      <div class="flex items-center gap-2">
+        <span class="material-symbols-outlined text-secondary text-[20px]">language</span>
+        <select id="lang-switcher-mobile" class="bg-transparent border-none text-[16px] font-bold text-secondary focus:outline-none cursor-pointer">
+          <option value="en">English</option>
+          <option value="id">Indonesia</option>
+          <option value="zh">Mandarin</option>
+        </select>
+      </div>
+      <a href="contact.html" class="bg-primary text-on-primary font-bold text-[14px] px-6 py-3 rounded-lg block text-center" data-i18n="nav_get_started">Get Started</a>
+    </div>
+  </nav>
+</header>
+<main class="flex-grow flex flex-col">
+
+<!-- Hero Section -->
+<section class="w-full relative min-h-[700px] flex items-center overflow-hidden bg-on-surface">
+  <!-- Background Image with Overlay -->
+  <div class="absolute inset-0 z-0">
+    <img src="rooftop_southeast_asian_villa_1779075043355.png" class="w-full h-full object-cover opacity-80" alt="Solar Villa and Industrial">
+    <div class="absolute inset-0 bg-gradient-to-r from-[#0b1c30]/90 via-[#0b1c30]/40 to-transparent"></div>
+  </div>
+  
+  <div class="relative z-10 max-w-[1440px] mx-auto px-margin-desktop w-full py-32 max-md:px-margin-mobile">
+    <div class="max-w-2xl flex flex-col gap-8">
+      <div class="flex flex-col gap-4">
+        <div class="flex flex-col gap-4">
+        <span class="text-primary-fixed uppercase tracking-widest font-bold text-[14px] hero-entrance" data-i18n="hero_tagline">The Power of Solar</span>
+        <h1 class="font-display-lg font-bold-mobile text-display-lg-mobile md:font-display-lg font-bold md:text-display-lg text-white hero-entrance" data-i18n="hero_title">
+          Engineering Indonesia's Energy Future
+        </h1>
+        <p class="font-body-lg text-body-lg text-surface-container-highest max-w-xl hero-entrance" data-i18n="hero_desc">
+          Transforming Indonesian rooftops into private power plants with zero-risk, massive-scale solutions. Built for precision, reliability, and total energy independence.
+        </p>
+      </div>
+      <div class="flex flex-wrap gap-4">
+        <a href="ownership.html" class="bg-primary text-on-primary font-bold text-[14px] px-8 py-4 rounded-lg btn-premium hover:opacity-80 transition-all duration-300 text-center" data-i18n="hero_cta_ownership">
+          Explore Ownership Models
+        </a>
+        <a href="how-it-works.html" class="bg-transparent border border-white/20 text-white font-bold text-[14px] px-8 py-4 rounded-lg btn-premium hover:bg-white/10 transition-all duration-300 text-center" data-i18n="hero_cta_how">
+          How it Works
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Detailed Content Section -->
+<section class="w-full bg-white py-section-gap-desktop max-md:py-section-gap-mobile border-t border-outline-variant/30">
+  <div class="reveal max-w-[1024px] mx-auto px-margin-desktop max-md:px-margin-mobile flex flex-col gap-24">
+<!-- The Old Way -->
+<div class="flex flex-col gap-8">
+<div class="flex flex-col gap-4">
+          <h2 class="font-headline-lg font-bold text-headline-lg text-on-surface" data-i18n="old_way_title">The Old Way: Our Reliance on Fossil Fuels</h2>
+          <p class="font-body-lg text-body-lg text-on-surface-variant" data-i18n="old_way_desc">For decades, our electrical grids have been heavily reliant on burning fossil fuels, primarily coal and natural gas. While this system has powered our modern world, it comes with a steep cost. Burning fossil fuels releases massive amounts of carbon dioxide and other greenhouse gases into the atmosphere, driving climate change and polluting the air we breathe. Furthermore, fossil fuels are finite resources subject to volatile global market prices, which inevitably leads to rising electricity costs for homes and businesses.</p>
+</div>
+<div class="w-full h-[400px] overflow-hidden rounded-lg btn-premium border border-outline-variant/30">
+<img alt="Intense burning coal emitting carbon pollution" class="w-full h-full object-cover opacity-90" src="coal_burning_impact_1779014230599.png"/>
+</div>
+</div>
+<!-- What is a Solar Panel? -->
+<div class="flex flex-col gap-8 bg-surface-container-low p-12 max-md:p-8 rounded-xl border border-outline-variant/30">
+<div class="flex flex-col gap-4">
+          <h2 class="font-headline-lg font-bold text-headline-lg text-on-surface" data-i18n="solar_panel_title">What is a Solar Panel?</h2>
+          <p class="font-body-lg text-body-lg text-on-surface-variant" data-i18n="solar_panel_desc">A solar panel is a device that captures sunlight and converts it directly into electricity. It’s a clean, silent, and incredibly efficient way to generate your own power. By placing these panels on your roof, you are essentially turning your home or building into a private power plant.</p>
+</div>
+<div class="w-full h-[400px] overflow-hidden rounded-lg btn-premium border border-outline-variant/30 mt-4">
+<img alt="Premium Solar Installation on Modern Villa" class="w-full h-full object-cover" src="luxury_villa_solar_ownership_1778723516125.png"/>
+</div>
+</div>
+<!-- Benefits -->
+<div class="flex flex-col gap-12">
+<div class="flex flex-col gap-4">
+          <h2 class="font-headline-lg font-bold text-headline-lg text-primary" data-i18n="switch_title">Why Make the Switch? The Benefits of Solar Energy</h2>
+          <p class="font-body-lg text-body-lg text-on-surface-variant" data-i18n="switch_desc">Transitioning to solar power is more than just an environmental statement; it is a strategic and financial upgrade.</p>
+</div>
+<div class="w-full h-[400px] overflow-hidden rounded-lg btn-premium border border-primary/30 shadow-[0_0_30px_rgba(0,110,47,0.1)] relative img-zoom-container">
+<img alt="Benefits of Solar Energy Infographic" class="w-full h-full object-cover" src="why_switch_solar.png"/>
+<div class="absolute inset-0 bg-primary/5 mix-blend-overlay"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-4">
+          <!-- Benefit 1 -->
+          <div class="flex items-start gap-4 p-6 bg-surface-container-lowest rounded-lg btn-premium border border-outline-variant/30 p-6">
+            <span class="material-symbols-outlined text-primary text-3xl">payments</span>
+            <div class="flex flex-col gap-2">
+              <h3 class="font-headline-md text-[20px] font-semibold text-on-surface" data-i18n="benefit_1_title">Drastic Cost Reduction</h3>
+              <p class="font-body-md text-on-surface-variant" data-i18n="benefit_1_desc">By generating your own electricity, you immediately reduce your reliance on the national grid, protecting yourself from unpredictable rate hikes and significantly lowering your monthly utility bills.</p>
+            </div>
+          </div>
+          <!-- Benefit 2 -->
+                    <div class="flex items-start gap-4 p-8 bg-surface border border-outline-variant/30 rounded-2xl card-shadow">
+            <span class="material-symbols-outlined text-primary text-3xl">public</span>
+            <div class="flex flex-col gap-2">
+              <h3 class="font-headline-md text-[20px] font-semibold text-on-surface" data-i18n="benefit_2_title">Environmental Stewardship</h3>
+              <p class="font-body-md text-on-surface-variant" data-i18n="benefit_2_desc">Solar power is 100% clean and renewable. Switching to solar drastically cuts down your carbon footprint and helps combat global warming by replacing emission-heavy coal power with zero-emission sunlight.</p>
+            </div>
+          </div>
+          <!-- Benefit 3 -->
+                    <div class="flex items-start gap-4 p-8 bg-surface border border-outline-variant/30 rounded-2xl card-shadow">
+            <span class="material-symbols-outlined text-primary text-3xl">battery_charging_full</span>
+            <div class="flex flex-col gap-2">
+              <h3 class="font-headline-md text-[20px] font-semibold text-on-surface" data-i18n="benefit_3_title">Energy Independence</h3>
+              <p class="font-body-md text-on-surface-variant" data-i18n="benefit_3_desc">Producing your own power gives you greater control over your energy future and operational costs.</p>
+            </div>
+          </div>
+          <!-- Benefit 4 -->
+                    <div class="flex items-start gap-4 p-8 bg-surface border border-outline-variant/30 rounded-2xl card-shadow">
+            <span class="material-symbols-outlined text-primary text-3xl">real_estate_agent</span>
+            <div class="flex flex-col gap-2">
+              <h3 class="font-headline-md text-[20px] font-semibold text-on-surface" data-i18n="benefit_4_title">Property Value</h3>
+              <p class="font-body-md text-on-surface-variant" data-i18n="benefit_4_desc">A solar-ready property is a modern property. Adding solar panels is an investment that increases the long-term value of your home or facility.</p>
+            </div>
+          </div>
+          <!-- Benefit 5 -->
+          <div class="flex items-start gap-4 p-6 bg-surface-container-lowest rounded-lg btn-premium border border-outline-variant/30 p-6 md:col-span-2">
+            <span class="material-symbols-outlined text-primary text-3xl">build</span>
+            <div class="flex flex-col gap-2">
+              <h3 class="font-headline-md text-[20px] font-semibold text-on-surface" data-i18n="benefit_5_title">Low Maintenance</h3>
+              <p class="font-body-md text-on-surface-variant" data-i18n="benefit_5_desc">Modern solar panels are built to withstand the elements and require very little maintenance over their lifespan, providing decades of reliable performance.</p>
+            </div>
+          </div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Call to Action Section -->
+<section class="relative py-16 overflow-hidden bg-on-surface">
+  <!-- Background Image with Dark Premium Overlay -->
+  <div class="absolute inset-0 z-0">
+    <img alt="Solar Panel Close-up" class="w-full h-full object-cover opacity-60" src="solar_panel_closeup_1778723210728.png"/>
+    <div class="absolute inset-0 bg-gradient-to-b from-[#0b1c30]/90 via-[#0b1c30]/60 to-[#0b1c30]"></div>
+  </div>
+  
+  <div class="reveal relative z-10 max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop text-center">
+    <div class="max-w-3xl mx-auto flex flex-col items-center gap-6">
+      <h2 class="font-display-lg font-bold text-headline-lg md:text-[40px] text-white leading-tight" data-i18n="about_cta_title">Ready to Power Your Future?</h2>
+      <p class="font-body-md text-body-lg text-slate-400 max-w-xl mx-auto" data-i18n="about_cta_desc">
+        Join the thousands of property owners who have already switched to clean, affordable energy. Get a free consultation with our expert engineers today.
+      </p>
+      <a href="contact.html" class="inline-block bg-primary text-on-primary font-bold text-[15px] px-10 py-4 rounded-lg btn-premium hover:opacity-90 transition-all duration-300 mt-2" data-i18n="about_cta_btn">
+        Book Your Free Consultation
+      </a>
+    </div>
+  </div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#0b1c30] border-t border-white/10 pt-16 pb-8 w-full mt-auto">
+  <div class="max-w-[1440px] mx-auto px-margin-desktop max-md:px-margin-mobile">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+      <!-- Brand Column -->
+      <div class="flex flex-col gap-6">
+        <a class="flex items-center" href="index.html">
+          <img src="mysolarlogonew.png" alt="mysolar.id logo" class="h-12 md:h-14 w-auto object-contain hover:opacity-80 transition-all duration-300"/>
+        </a>
+        <p class="font-body-md text-slate-400 max-w-xs" data-i18n="footer_desc">
+          Leading the way toward a brighter, more sustainable Indonesia through advanced solar hybrid systems and storage solutions.
+        </p>
+        <div class="flex gap-4">
+          <a href="#" class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary transition-all duration-300">
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="#" class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary transition-all duration-300">
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.34 2.88 2.88 0 0 1 2.9-3.93 2.92 2.92 0 0 1 1.66.53V9.81a6.35 6.35 0 0 0-4.56-.25 6.32 6.32 0 0 0-4.24 7.28 6.3 6.3 0 0 0 5.75 4.96 6.34 6.34 0 0 0 6.64-5.38 6.33 6.33 0 0 0 .58-2.65V9.08a8.23 8.23 0 0 0 5.66 2.21V7.83a4.84 4.84 0 0 1-1.97-1.14z"/></svg>
+          </a>
+          <a href="#" class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary transition-all duration-300">
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Pages Column -->
+      <div class="flex flex-col gap-6">
+        <h4 class="font-bold text-[14px] text-white uppercase tracking-widest font-bold" data-i18n="footer_pages">Pages</h4>
+        <nav class="flex flex-col gap-4">
+          <a href="index.html" class="font-body-md text-slate-400 hover:text-primary-fixed transition-colors">Home</a>
+          <a href="about.html" class="font-body-md text-slate-400 hover:text-primary-fixed transition-colors">About Us</a>
+          <a href="how-it-works.html" class="font-body-md text-slate-400 hover:text-primary-fixed transition-colors">How it Works</a>
+          <a href="ownership.html" class="font-body-md text-slate-400 hover:text-primary-fixed transition-colors">Ownership Models</a>
+        </nav>
+      </div>
+
+      <!-- Quick Links Column -->
+      <div class="flex flex-col gap-6">
+        <h4 class="font-bold text-[14px] text-white uppercase tracking-widest font-bold" data-i18n="footer_quick_links">Quick Links</h4>
+        <nav class="flex flex-col gap-4">
+          <a href="contact.html" class="font-body-md text-slate-400 hover:text-primary-fixed transition-colors">Contact Us</a>
+          <a href="#" class="font-body-md text-slate-400 hover:text-primary-fixed transition-colors">Privacy Policy</a>
+          <a href="#" class="font-body-md text-slate-400 hover:text-primary-fixed transition-colors">Terms of Service</a>
+        </nav>
+      </div>
+
+      <!-- Contact Column -->
+      <div class="flex flex-col gap-6">
+        <h4 class="font-bold text-[14px] text-white uppercase tracking-widest font-bold" data-i18n="footer_contact">Contact</h4>
+        <div class="flex flex-col gap-4">
+          <div class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary text-[20px]">mail</span>
+            <a href="mailto:mysolar.id@gmail.com" class="font-body-md text-slate-400 hover:text-primary-fixed transition-colors">mysolar.id@gmail.com</a>
+          </div>
+          <div class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-primary fill-current mt-0.5" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.888-.788-1.487-1.761-1.662-2.06-.175-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            <span class="font-body-md text-slate-400">+62 813 7135 2788</span>
+          </div>
+          <div class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary text-[20px]">location_on</span>
+            <span class="font-body-md text-slate-400">Anggrek Mas 3 Blok A6 37, Batam Center</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
+      <p class="font-body-md text-label-sm text-slate-400" data-i18n="footer_rights">
+        © 2024 mysolar.id. All rights reserved.
+      </p>
+      <p class="font-body-md text-label-sm text-slate-400" data-i18n="footer_tagline">
+        Built for a Sustainable Indonesia
+      </p>
+    </div>
+  </div>
+</footer>
+    <script src="main.js" defer></script>
+</body></html>

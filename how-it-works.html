@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>How it Works | mysolar.id</title>
+<link rel="icon" type="image/png" href="mysolarlogonew.png"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Metropolis:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+     body {
+       font-family: 'DM Sans', sans-serif;
+       background-color: #f8f9ff; /* surface */
+       color: #0b1c30; /* on-surface */
+     }
+     h1, h2, h3, h4, h5, h6, .font-display, .font-headline, .font-label {
+       font-family: 'Metropolis', sans-serif;
+     }
+</style>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS with Config -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+     darkMode: "class",
+     theme: {
+      extend: {
+       "colors": {
+           "outline-variant": "#bccbb9",
+           "on-error-container": "#93000a",
+           "secondary-fixed": "#d5e3fd",
+           "tertiary": "#5e5e60",
+           "primary": "#006e2f",
+           "error-container": "#ffdad6",
+           "surface-variant": "#d3e4fe",
+           "on-surface-variant": "#3d4a3d",
+           "on-primary-fixed": "#002109",
+           "inverse-on-surface": "#eaf1ff",
+           "primary-fixed": "#6bff8f",
+           "on-tertiary-fixed": "#1b1c1e",
+           "secondary-container": "#d5e3fd",
+           "on-secondary-container": "#57657b",
+           "tertiary-fixed": "#e3e2e4",
+           "on-tertiary": "#ffffff",
+           "surface-container-lowest": "#ffffff",
+           "primary-fixed-dim": "#4ae176",
+           "surface-container-low": "#eff4ff",
+           "surface-container": "#e5eeff",
+           "inverse-primary": "#4ae176",
+           "inverse-surface": "#213145",
+           "on-primary-fixed-variant": "#005321",
+           "error": "#ba1a1a",
+           "on-secondary-fixed": "#0d1c2f",
+           "on-tertiary-fixed-variant": "#464749",
+           "secondary": "#515f74",
+           "on-primary-container": "#004b1e",
+           "on-secondary-fixed-variant": "#3a485c",
+           "on-primary": "#ffffff",
+           "on-secondary": "#ffffff",
+           "surface": "#f8f9ff",
+           "background": "#f8f9ff",
+           "on-surface": "#0b1c30",
+           "on-tertiary-container": "#3f4042",
+           "surface-bright": "#f8f9ff",
+           "on-error": "#ffffff",
+           "tertiary-fixed-dim": "#c7c6c8",
+           "surface-dim": "#cbdbf5",
+           "secondary-fixed-dim": "#b9c7e0",
+           "surface-tint": "#006e2f",
+           "tertiary-container": "#acabae",
+           "on-background": "#0b1c30",
+           "outline": "#6d7b6c",
+           "primary-container": "#22c55e",
+           "surface-container-highest": "#d3e4fe",
+           "surface-container-high": "#dce9ff"
+       },
+       "borderRadius": {
+           "DEFAULT": "0.125rem",
+           "lg": "0.25rem",
+           "xl": "0.5rem",
+           "full": "0.75rem"
+       },
+       "spacing": {
+           "gutter": "24px",
+           "base": "8px",
+           "section-gap-mobile": "48px",
+           "margin-desktop": "80px",
+           "section-gap-desktop": "80px",
+           "margin-mobile": "20px"
+       },
+       "fontFamily": {
+           "display-lg-mobile": ["Metropolis"],
+           "body-lg": ["DM Sans"],
+           "body-md": ["DM Sans"],
+           "label-sm": ["Metropolis"],
+           "label-md": ["Metropolis"],
+           "display-lg": ["Metropolis"],
+           "headline-md": ["Metropolis"],
+           "headline-lg": ["Metropolis"]
+       },
+       "fontSize": {
+           "display-lg-mobile": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+           "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+           "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+           "label-sm": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.03em", "fontWeight": "500"}],
+           "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+           "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+           "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+           "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}]
+       }
+      }
+     }
+    }
+</script>
+<link rel="stylesheet" href="style.css">
+<script src="translations.js" defer></script>
+</head>
+<body class="bg-surface text-on-surface antialiased min-h-screen flex flex-col pt-[88px]">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/95 dark:bg-on-surface/95 backdrop-blur-sm border-b border-outline-variant/20">
+  <div class="flex justify-between items-center px-margin-desktop py-5 max-w-[1440px] mx-auto w-full max-md:px-margin-mobile max-md:py-4">
+    <!-- Brand Logo -->
+    <a class="flex items-center" href="index.html">
+      <img src="mysolarlogonew.png" alt="mysolar.id logo" class="h-14 md:h-16 w-auto object-contain hover:opacity-80 transition-all duration-300"/>
+    </a>
+    <!-- Desktop Nav -->
+    <nav class="hidden md:flex gap-8 items-center font-display-lg text-[18px] font-bold tracking-wide">
+      <a class="text-secondary hover:text-primary transition-colors" href="index.html" data-i18n="nav_home">Home</a>
+      <a class="text-secondary hover:text-primary transition-colors" href="about.html" data-i18n="nav_about">About Us</a>
+      <a class="text-primary border-b-2 border-primary pb-1" href="how-it-works.html" data-i18n="nav_how_it_works">How it Works</a>
+      <a class="text-secondary hover:text-primary transition-colors" href="ownership.html" data-i18n="nav_ownership">Ownership</a>
+      <a class="text-secondary hover:text-primary transition-colors" href="contact.html" data-i18n="nav_contact">Contact Us</a>
+    </nav>
+    <!-- Desktop CTA & Lang Switcher -->
+    <div class="flex items-center gap-4">
+      <div class="hidden md:flex items-center gap-2 mr-2">
+        <span class="material-symbols-outlined text-secondary text-[20px]">language</span>
+        <select id="lang-switcher" class="bg-transparent border-none text-[14px] font-bold text-secondary focus:outline-none cursor-pointer">
+          <option value="en">EN</option>
+          <option value="id">ID</option>
+          <option value="zh">CN</option>
+        </select>
+      </div>
+      <a href="contact.html" class="hidden md:block bg-primary text-on-primary font-bold text-[14px] px-6 py-3 rounded-lg btn-premium hover:opacity-80 transition-all duration-300" data-i18n="nav_get_started">Get Started</a>
+      <!-- Mobile Hamburger -->
+      <button id="mobile-menu-btn" class="md:hidden text-primary p-2" aria-label="Open menu">
+        <span class="material-symbols-outlined" style="font-size:28px;">menu</span>
+      </button>
+    </div>
+  </div>
+  <!-- Mobile Dropdown Nav -->
+  <nav id="mobile-nav" class="bg-surface border-t border-outline-variant/20 md:hidden">
+    <a class="text-secondary font-bold text-[16px] block px-6 py-4 border-b border-outline-variant/10 hover:text-primary" href="index.html" data-i18n="nav_home">Home</a>
+    <a class="text-secondary font-bold text-[16px] block px-6 py-4 border-b border-outline-variant/10 hover:text-primary" href="about.html" data-i18n="nav_about">About Us</a>
+    <a class="text-primary font-bold text-[16px] block px-6 py-4 border-b border-outline-variant/10" href="how-it-works.html" data-i18n="nav_how_it_works">How it Works</a>
+    <a class="text-secondary font-bold text-[16px] block px-6 py-4 border-b border-outline-variant/10 hover:text-primary" href="ownership.html" data-i18n="nav_ownership">Ownership</a>
+    <a class="text-secondary font-bold text-[16px] block px-6 py-4 border-b border-outline-variant/10 hover:text-primary" href="contact.html" data-i18n="nav_contact">Contact Us</a>
+    <div class="px-6 py-4 flex flex-col gap-4">
+      <div class="flex items-center gap-2">
+        <span class="material-symbols-outlined text-secondary text-[20px]">language</span>
+        <select id="lang-switcher-mobile" class="bg-transparent border-none text-[16px] font-bold text-secondary focus:outline-none cursor-pointer">
+          <option value="en">English</option>
+          <option value="id">Indonesia</option>
+          <option value="zh">Mandarin</option>
+        </select>
+      </div>
+      <a href="contact.html" class="bg-primary text-on-primary font-bold text-[14px] px-6 py-3 rounded-lg block text-center" data-i18n="nav_get_started">Get Started</a>
+    </div>
+  </nav>
+</header>
+
+<main class="flex-grow">
+<!-- Hero Section -->
+<section class="w-full relative min-h-[700px] flex items-center overflow-hidden bg-on-surface">
+  <div class="absolute inset-0 z-0">
+    <img src="bess_installation_hero_1778665124852.png" class="w-full h-full object-cover opacity-80" alt="BESS System">
+    <div class="absolute inset-0 bg-gradient-to-r from-[#0b1c30]/90 via-[#0b1c30]/40 to-transparent"></div>
+  </div>
+  <div class="relative z-10 max-w-[1440px] mx-auto px-margin-desktop w-full py-32 max-md:px-margin-mobile">
+    <div class="max-w-2xl flex flex-col gap-8">
+      <div class="flex flex-col gap-4">
+        <span class="text-primary-fixed uppercase tracking-widest font-bold text-[14px]" data-i18n="how_hero_tagline">Technology</span>
+        <h1 class="font-display-lg font-bold text-display-lg text-white" data-i18n="how_hero_title">Intelligent Hybrid Storage.</h1>
+        <p class="font-body-lg text-body-lg text-surface-container-highest max-w-xl" data-i18n="how_hero_desc">
+          Seamlessly transition between solar, battery, and grid power. Our sophisticated energy management system ensures absolute reliability and maximum return on investment.
+        </p>
+      </div>
+      <div class="flex flex-wrap gap-4">
+        <a href="contact.html" class="bg-primary text-on-primary font-bold text-[14px] px-8 py-4 rounded-lg btn-premium hover:opacity-80 transition-all duration-300 text-center" data-i18n="how_hero_cta">Get Started</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Introduction Section -->
+<section class="bg-white py-section-gap-mobile md:py-section-gap-desktop border-b border-outline-variant/10">
+  <div class="reveal max-w-4xl mx-auto px-margin-mobile text-center flex flex-col items-center justify-center">
+      <h2 class="font-headline font-bold text-headline-lg text-on-surface mb-6" data-i18n="how_intro_title">Understanding the Solar Hybrid System & BESS</h2>
+      <div class="w-16 h-1 bg-primary rounded-full mb-6"></div>
+      <p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed max-w-3xl" data-i18n="how_intro_desc">
+        A standard solar system only works when the sun is up, meaning you still rely on the grid at night. A Solar Hybrid System is the smarter evolution. By adding a BESS (Battery Energy Storage System), you aren't just generating power—you are managing it.
+      </p>
+  </div>
+</section>
+
+<!-- 24-Hour Cycle Section (Infographic) -->
+<section class="bg-surface-container py-section-gap-mobile md:py-section-gap-desktop border-y border-outline-variant/20">
+  <div class="reveal max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop">
+    <div class="bg-[#0b1c30] rounded-[2rem] overflow-hidden shadow-2xl border border-white/10">
+      <div class="p-8 text-center border-b border-white/5">
+          <h2 class="text-white font-bold text-[18px] md:text-[22px] uppercase mb-2">
+            SOLAR <span class="text-primary">HYBRID</span> SYSTEM <span class="text-secondary">WITH BESS</span>
+          </h2>
+      </div>
+
+      <!-- Day Time Section -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 border-b border-white/5 relative group">
+          <div class="lg:col-span-4 h-[400px] lg:h-auto relative overflow-hidden">
+              <img src="luxury_villa_solar_ownership_1778723516125.png" class="w-full h-full object-cover opacity-80 transition-transform duration-1000 group-hover:scale-110" alt="Day Villa">
+              <div class="absolute inset-0 bg-gradient-to-r from-[#0b1c30]/60 via-[#0b1c30]/20 to-transparent"></div>
+              <div class="absolute top-12 left-12">
+                  <span class="bg-[#facc15] text-black px-6 py-2 rounded-full text-[14px] font-black tracking-widest flex items-center gap-2 shadow-lg" data-i18n="how_day_badge">
+                      <span class="material-symbols-outlined text-[20px]">light_mode</span> DAY TIME
+                  </span>
+              </div>
+          </div>
+          <div class="lg:col-span-8 p-12 grid grid-cols-1 md:grid-cols-2 gap-12 items-center bg-white/[0.02]">
+              <div class="relative h-[300px]">
+                  <svg class="w-full h-full" viewBox="0 0 500 300">
+                      <!-- Sun -->
+                      <circle cx="25" cy="25" r="15" fill="#facc15" />
+                      <g stroke="#facc15" stroke-width="2">
+                        <line x1="25" y1="5" x2="25" y2="10" />
+                        <line x1="25" y1="40" x2="25" y2="45" />
+                        <line x1="5" y1="25" x2="10" y2="25" />
+                        <line x1="40" y1="25" x2="45" y2="25" />
+                      </g>
+                      <text x="55" y="30" fill="#facc15" font-size="10" font-weight="900" class="uppercase tracking-widest">THE SUN</text>
+                      <!-- Nodes -->
+                      <rect x="20" y="80" width="80" height="60" rx="8" fill="#1e293b" stroke="#4ade80" stroke-width="3" />
+                      <text x="60" y="165" fill="white" font-size="12" font-weight="900" text-anchor="middle" class="uppercase tracking-tighter">Solar Panels</text>
+                      <rect x="210" y="60" width="80" height="100" rx="12" fill="#334155" stroke="white" stroke-width="3" />
+                      <text x="250" y="185" fill="white" font-size="12" font-weight="900" text-anchor="middle" class="uppercase tracking-tighter">Inverter</text>
+                      <path d="M400 80 L440 50 L480 80 L480 140 L400 140 Z" fill="#1e293b" stroke="white" stroke-width="3" />
+                      <text x="440" y="165" fill="white" font-size="12" font-weight="900" text-anchor="middle" class="uppercase tracking-tighter">Home / Business</text>
+                      <rect x="210" y="215" width="80" height="55" rx="6" fill="#006e2f" opacity="0.3" stroke="#4ade80" stroke-width="3" />
+                      <text x="250" y="295" fill="#4ade80" font-size="12" font-weight="900" text-anchor="middle" class="uppercase tracking-tighter">BESS Storage</text>
+                      <!-- Flow Lines -->
+                      <path d="M40 40 Q 50 60, 60 80" stroke="#facc15" stroke-width="4" fill="none" class="flow-line-active" />
+                      <path d="M100 110 L210 110" stroke="#4ade80" stroke-width="6" fill="none" class="flow-line-active" />
+                      <path d="M290 110 L400 110" stroke="#4ade80" stroke-width="6" fill="none" class="flow-line-active" />
+                      <path d="M250 160 L250 215" stroke="#4ade80" stroke-width="6" fill="none" class="flow-line-active" />
+                      <!-- Grid (Standby) -->
+                      <g>
+                        <path d="M440 200 L440 260 M420 210 L460 210 M425 230 L455 230" stroke="white" stroke-width="3" opacity="0.6" />
+                        <line x1="480" y1="110" x2="440" y2="200" stroke="white" stroke-width="2" stroke-dasharray="5,5" opacity="0.4" />
+                        <text x="440" y="280" fill="white" font-size="10" font-weight="900" text-anchor="middle" class="uppercase tracking-widest" opacity="0.8">GRID (BACKUP ONLY)</text>
+                      </g>
+                  </svg>
+              </div>
+              <div class="flex flex-col gap-6">
+                  <h3 class="text-white font-headline-md text-[24px] font-bold" data-i18n="how_day_title">During the Day: Maximize and Store</h3>
+                  <div class="space-y-4">
+                      <div>
+                          <h4 class="text-primary font-bold text-[14px] uppercase tracking-widest flex items-center gap-2">
+                              <span class="material-symbols-outlined text-[18px]">bolt</span> <span data-i18n="how_day_item_1_title">Direct Power</span>
+                          </h4>
+                          <p class="text-white/90 text-[14px] leading-relaxed mt-1" data-i18n="how_day_item_1_desc">Your solar panels absorb sunlight and immediately power your home or facility. Whether it’s your air conditioning, lights, or industrial machinery, it runs on free, clean energy.</p>
+                      </div>
+                      <div>
+                          <h4 class="text-primary font-bold text-[14px] uppercase tracking-widest flex items-center gap-2">
+                              <span class="material-symbols-outlined text-[18px]">battery_charging_full</span> <span data-i18n="how_day_item_2_title">Smart Charging</span>
+                          </h4>
+                          <p class="text-white/90 text-[14px] leading-relaxed mt-1" data-i18n="how_day_item_2_desc">Usually, panels produce more electricity than you can use during the middle of the day. Instead of letting that extra energy go to waste, the Hybrid system automatically directs it into your BESS (Battery Energy Storage System).</p>
+                      </div>
+                      <div>
+                          <h4 class="text-primary font-bold text-[14px] uppercase tracking-widest flex items-center gap-2">
+                              <span class="material-symbols-outlined text-[18px]">verified</span> <span data-i18n="how_day_item_3_title">Full Independence</span>
+                          </h4>
+                          <p class="text-white/90 text-[14px] leading-relaxed mt-1" data-i18n="how_day_item_3_desc">While your neighbors are pulling power from the grid, your property is self-sufficient and charging its 'energy bank' for later.</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <!-- Night Time Section -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 relative group">
+          <div class="lg:col-span-4 h-[400px] lg:h-auto relative overflow-hidden order-1 lg:order-1">
+              <img src="solar_bess_combo_1778665525134.png" class="w-full h-full object-cover opacity-70 transition-transform duration-1000 group-hover:scale-110" alt="Night Villa">
+              <div class="absolute inset-0 bg-gradient-to-r from-[#0b1c30]/80 via-[#0b1c30]/40 to-transparent"></div>
+              <div class="absolute top-12 left-12">
+                  <span class="bg-[#004e92] text-white px-6 py-2 rounded-full text-[14px] font-black tracking-widest flex items-center gap-2 shadow-lg" data-i18n="how_night_badge">
+                      <span class="material-symbols-outlined text-[20px]">dark_mode</span> NIGHT TIME
+                  </span>
+              </div>
+          </div>
+          <div class="lg:col-span-8 p-12 grid grid-cols-1 md:grid-cols-2 gap-12 items-center bg-black/40 order-2">
+              <div class="flex flex-col gap-6 order-2 md:order-1">
+                  <h3 class="text-white font-headline-md text-[24px] font-bold" data-i18n="how_night_title">During the Night: Total Energy Freedom</h3>
+                  <div class="space-y-4">
+                      <div>
+                          <h4 class="text-secondary font-bold text-[14px] uppercase tracking-widest flex items-center gap-2">
+                              <span class="material-symbols-outlined text-[18px]">sync</span> <span data-i18n="how_night_item_1_title">Seamless Transition</span>
+                          </h4>
+                          <p class="text-white/90 text-[14px] leading-relaxed mt-1" data-i18n="how_night_item_1_desc">Once the sun sets and the panels stop producing, the system doesn't skip a beat. It automatically switches to drawing power from your stored batteries.</p>
+                      </div>
+                      <div>
+                          <h4 class="text-secondary font-bold text-[14px] uppercase tracking-widest flex items-center gap-2">
+                              <span class="material-symbols-outlined text-[18px]">battery_full</span> <span data-i18n="how_night_item_2_title">Zero Grid Reliance</span>
+                          </h4>
+                          <p class="text-white/90 text-[14px] leading-relaxed mt-1" data-i18n="how_night_item_2_desc">You can run your lights, appliances, and security systems throughout the night using the energy you harvested during the day.</p>
+                      </div>
+                      <div>
+                          <h4 class="text-secondary font-bold text-[14px] uppercase tracking-widest flex items-center gap-2">
+                              <span class="material-symbols-outlined text-[18px]">currency_exchange</span> <span data-i18n="how_night_item_3_title">Cost Avoidance</span>
+                          </h4>
+                          <p class="text-white/90 text-[14px] leading-relaxed mt-1" data-i18n="how_night_item_3_desc">You avoid using expensive grid electricity during the night, ensuring your savings continue even while you sleep.</p>
+                      </div>
+                  </div>
+              </div>
+              <div class="relative h-[300px] order-1 md:order-2">
+                  <svg class="w-full h-full" viewBox="0 0 500 300">
+                      <!-- Nodes -->
+                      <rect x="20" y="80" width="80" height="60" rx="8" fill="#1e293b" stroke="white" stroke-width="1" opacity="0.3" />
+                      <text x="60" y="165" fill="white" opacity="0.4" font-size="12" font-weight="900" text-anchor="middle" class="uppercase tracking-tighter">No Generation</text>
+                      <rect x="210" y="60" width="80" height="100" rx="12" fill="#334155" stroke="white" stroke-width="3" />
+                      <text x="250" y="185" fill="white" font-size="12" font-weight="900" text-anchor="middle" class="uppercase tracking-tighter">Inverter</text>
+                      <path d="M400 80 L440 50 L480 80 L480 140 L400 140 Z" fill="#1e293b" stroke="#4ade80" stroke-width="4" />
+                      <text x="440" y="165" fill="white" font-size="12" font-weight="900" text-anchor="middle" class="uppercase tracking-tighter">Home / Business</text>
+                      <rect x="210" y="215" width="80" height="55" rx="6" fill="#006e2f" stroke="#4ade80" stroke-width="4" />
+                      <text x="250" y="295" fill="#4ade80" font-size="12" font-weight="900" text-anchor="middle" class="uppercase tracking-tighter">BESS Storage</text>
+                      <!-- Flow Lines -->
+                      <path d="M250 215 L250 160" stroke="#4ade80" stroke-width="8" fill="none" class="flow-line-active" />
+                      <path d="M290 110 L400 110" stroke="#4ade80" stroke-width="8" fill="none" class="flow-line-active" />
+                      <!-- Grid (Standby) -->
+                      <g>
+                        <path d="M440 200 L440 260 M420 210 L460 210 M425 230 L455 230" stroke="white" stroke-width="3" opacity="0.6" />
+                        <line x1="480" y1="110" x2="440" y2="200" stroke="white" stroke-width="2" stroke-dasharray="5,5" opacity="0.4" />
+                        <text x="440" y="280" fill="white" font-size="10" font-weight="900" text-anchor="middle" class="uppercase tracking-widest" opacity="0.8">GRID (BACKUP ONLY)</text>
+                      </g>
+                  </svg>
+              </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="surface-bright max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop py-section-gap-mobile md:py-section-gap-desktop">
+  <div class="reveal grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24 items-start">
+    <!-- Text Column -->
+    <div class="flex flex-col gap-12">
+      <div class="flex flex-col gap-6">
+        <h3 class="font-headline-lg font-bold text-headline-lg text-on-surface" data-i18n="how_safety_title">The "Safety Shield" (Emergency Backup)</h3>
+        <p class="font-body-lg text-body-lg text-on-surface-variant" data-i18n="how_safety_desc">
+          In many parts of Indonesia, the grid can be unpredictable. A Solar Hybrid System acts as a silent guardian for your property:
+        </p>
+        <div class="space-y-6">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-full bg-error-container flex items-center justify-center shrink-0">
+              <span class="material-symbols-outlined text-error">power_off</span>
+            </div>
+            <div>
+              <h4 class="font-bold text-[14px] text-on-surface uppercase tracking-widest mb-2" data-i18n="how_safety_item_1_title">Blackout Protection</h4>
+              <p class="font-body-md text-body-md text-on-surface-variant" data-i18n="how_safety_item_1_desc">If the local grid goes down due to a storm or maintenance, your BESS kicks in instantly.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-full bg-primary-container/20 flex items-center justify-center shrink-0">
+              <span class="material-symbols-outlined text-primary">autorenew</span>
+            </div>
+            <div>
+              <h4 class="font-bold text-[14px] text-on-surface uppercase tracking-widest mb-2" data-i18n="how_safety_item_2_title">Continuous Power</h4>
+              <p class="font-body-md text-body-md text-on-surface-variant" data-i18n="how_safety_item_2_desc">Your essential devices—like refrigerators, Wi-Fi, and security cameras—stay powered. For industrial sites, this prevents costly downtime and equipment restarts.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex flex-col gap-6">
+        <h3 class="font-headline-lg font-bold text-headline-lg text-on-surface" data-i18n="how_heart_title">Why BESS is the Heart of your System</h3>
+        <p class="font-body-lg text-body-lg text-on-surface-variant" data-i18n="how_heart_desc">
+          Without a battery, any solar energy you don't use immediately is lost. With a BESS, you own your energy.
+        </p>
+        <ul class="space-y-4 font-body-lg text-body-lg text-on-surface-variant">
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+            <span data-i18n="how_heart_item_1">No Waste: Every ray of sunlight that hits your roof is captured and saved.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+            <span data-i18n="how_heart_item_2">Independence: You are no longer at the mercy of rising electricity tariffs or grid instability.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+            <span data-i18n="how_heart_item_3">Future-Ready: As Indonesia moves toward a greener future, your property will already be equipped with the most advanced energy storage technology available.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- Images stacked: Blackout on TOP, PLN bill BELOW -->
+    <div class="flex flex-col gap-4">
+      <div class="rounded-xl overflow-hidden shadow-xl border border-outline-variant/30 img-zoom-container">
+        <img src="blackout_protection_house.jpg" class="w-full object-cover" alt="Home protected from blackout by solar BESS">
+      </div>
+      <div class="rounded-xl overflow-hidden shadow-lg border border-outline-variant/30 img-zoom-container">
+        <img src="pln_bill_comparison.jpg" class="w-full object-cover" alt="PLN bill before and after solar panel installation">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Hybrid Advantage & Flow Diagram Section -->
+<section class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop py-section-gap-mobile md:py-section-gap-desktop border-t border-outline-variant/20 bg-white">
+<div class="reveal mb-16 text-center max-w-3xl mx-auto flex flex-col gap-6">
+<h2 class="font-bold text-headline-lg md:text-headline-xl text-on-surface" data-i18n="how_hybrid_title">The Hybrid Advantage: Your Invisible Safety Net</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant" data-i18n="how_hybrid_desc">
+  While the goal is to use as much free energy from the sun as possible, there are moments when you might need a little extra help. This is the "Hybrid" advantage—the system intelligently balances your solar panels, your batteries, and the national grid.
+</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Text Content -->
+        <div class="lg:col-span-5 flex flex-col justify-center gap-12">
+          <div>
+            <h3 class="font-headline-lg font-bold text-headline-lg text-on-surface mb-4" data-i18n="how_grid_title">When the Grid Steps In:</h3>
+            <ul class="space-y-6">
+              <li class="flex items-start gap-4">
+                <span class="material-symbols-outlined text-secondary mt-1">trending_up</span>
+                <div>
+                  <strong class="block font-bold text-[14px] text-on-surface uppercase tracking-widest mb-1" data-i18n="how_grid_item_1_title">Peak Demand Moments</strong>
+                  <span class="font-body-md text-body-md text-on-surface-variant" data-i18n="how_grid_item_1_desc">If you are running multiple high-energy appliances at once—such as air conditioners, water heaters, and industrial machinery—and the demand exceeds what your panels are producing, the system instantly pulls the difference from the grid. You won't notice a flicker; it’s a seamless, automatic supplement.</span>
+                </div>
+              </li>
+              <li class="flex items-start gap-4">
+                <span class="material-symbols-outlined text-secondary mt-1">cloud</span>
+                <div>
+                  <strong class="block font-bold text-[14px] text-on-surface uppercase tracking-widest mb-1" data-i18n="how_grid_item_2_title">Cloudy or Rainy Days</strong>
+                  <span class="font-body-md text-body-md text-on-surface-variant" data-i18n="how_grid_item_2_desc">On days with heavy cloud cover or tropical storms where solar production is naturally lower, the grid acts as your backup. It fills the gap to ensure your property remains fully powered without draining your batteries too early.</span>
+                </div>
+              </li>
+              <li class="flex items-start gap-4">
+                <span class="material-symbols-outlined text-secondary mt-1">battery_charging_full</span>
+                <div>
+                  <strong class="block font-bold text-[14px] text-on-surface uppercase tracking-widest mb-1" data-i18n="how_grid_item_3_title">Battery Replenishment</strong>
+                  <span class="font-body-md text-body-md text-on-surface-variant" data-i18n="how_grid_item_3_desc">If you’ve had a long night of high energy usage and your BESS is low, the system can use the grid to ensure you still have electricity until the sun rises again to take over the heavy lifting.</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-headline-lg font-bold text-headline-lg text-on-surface mb-4" data-i18n="how_priority_title">The Priority Logic:</h3>
+            <p class="font-body-lg text-body-lg text-on-surface-variant mb-6" data-i18n="how_priority_desc">
+              The system is programmed to save you the most money by following this priority order:
+            </p>
+            <ul class="space-y-4">
+              <li class="flex items-start gap-4">
+                <span class="material-symbols-outlined text-primary mt-1">looks_one</span>
+                <div>
+                  <span class="block font-bold text-[14px] text-on-surface uppercase tracking-widest mb-1" data-i18n="how_priority_item_1_title">Solar First</span>
+                  <span class="font-body-md text-body-md text-on-surface-variant" data-i18n="how_priority_item_1_desc">Use every bit of sunlight available.</span>
+                </div>
+              </li>
+              <li class="flex items-start gap-4">
+                <span class="material-symbols-outlined text-primary mt-1">looks_two</span>
+                <div>
+                  <span class="block font-bold text-[14px] text-on-surface uppercase tracking-widest mb-1" data-i18n="how_priority_item_2_title">Battery Second</span>
+                  <span class="font-body-md text-body-md text-on-surface-variant" data-i18n="how_priority_item_2_desc">Use your stored "savings" when the sun goes down.</span>
+                </div>
+              </li>
+              <li class="flex items-start gap-4">
+                <span class="material-symbols-outlined text-tertiary mt-1">looks_3</span>
+                <div>
+                  <span class="block font-bold text-[14px] text-on-surface uppercase tracking-widest mb-1" data-i18n="how_priority_item_3_title">Grid Third</span>
+                  <span class="font-body-md text-body-md text-on-surface-variant" data-i18n="how_priority_item_3_desc">Only pull from the grid when your solar and battery aren't enough to meet your current needs.</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+<!-- Priority Logic Graphic -->
+<div class="lg:col-span-7 flex items-center justify-center rounded-xl overflow-hidden shadow-2xl border border-outline-variant/30 bg-surface-container-low img-zoom-container">
+  <img src="priority_logic_graphic.png" class="w-full h-auto object-cover" alt="The Priority Logic: Solar First, Battery Second, Grid Third">
+</div>
+</div>
+      <div class="mt-16 text-center max-w-3xl mx-auto p-8 bg-surface border border-outline-variant rounded-xl">
+        <h3 class="font-headline-lg font-bold text-headline-lg text-on-surface mb-4" data-i18n="how_advantage_footer_title">The Hybrid Advantage: Seamless & Automatic</h3>
+        <p class="font-body-lg text-body-lg text-on-surface-variant" data-i18n="how_advantage_footer_desc">
+          The beauty of our system is that it thinks for you. You don't need to flip a switch or monitor the weather. The system intelligently balances solar, battery, and grid power in real-time, ensuring you always have the most cost-effective and reliable power source active at any given moment.
+        </p>
+      </div>
+    </section>
+
+<!-- Simple 3-Step Process Section -->
+<section class="bg-white py-section-gap-mobile md:py-section-gap-desktop w-full max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop border-t border-outline-variant/20">
+<div class="reveal text-center mb-16">
+<h2 class="font-headline-lg font-bold text-headline-lg text-on-surface mb-4" data-i18n="how_steps_title">Simple 3-Step Process</h2>
+<p class="font-body-md text-body-md text-secondary" data-i18n="how_steps_desc">From initial survey to grid integration, we ensure a seamless transition.</p>
+</div>
+<div class="reveal grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="bg-surface-container-lowest border border-outline-variant rounded-DEFAULT btn-premium p-8 relative">
+<div class="w-12 h-12 bg-surface-container rounded-full flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary text-2xl">assignment</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-3" data-i18n="how_step_1_title">1. Consultation & Site Survey</h3>
+<p class="font-body-md text-body-md text-secondary" data-i18n="how_step_1_desc">We evaluate your roof and energy needs.</p>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-DEFAULT btn-premium p-8 relative">
+<div class="w-12 h-12 bg-surface-container rounded-full flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary text-2xl">architecture</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-3" data-i18n="how_step_2_title">2. Custom Design & Logistics</h3>
+<p class="font-body-md text-body-md text-secondary" data-i18n="how_step_2_desc">We tap into our massive supply chain to get you the best tech fast.</p>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-DEFAULT btn-premium p-8 relative">
+<div class="w-12 h-12 bg-surface-container rounded-full flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary text-2xl">solar_power</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-3" data-i18n="how_step_3_title">3. Professional Installation</h3>
+<p class="font-body-md text-body-md text-secondary" data-i18n="how_step_3_desc">Our expert teams handle the setup from start to finish.</p>
+</div>
+</div>
+</section>
+
+<!-- Call to Action Section -->
+<section class="relative py-16 overflow-hidden bg-on-surface">
+  <!-- Background Image with Dark Premium Overlay -->
+  <div class="absolute inset-0 z-0">
+    <img alt="Solar Panel Close-up" class="w-full h-full object-cover opacity-60" src="solar_panel_closeup_1778723210728.png"/>
+    <div class="absolute inset-0 bg-gradient-to-b from-[#0b1c30]/90 via-[#0b1c30]/60 to-[#0b1c30]"></div>
+  </div>
+  
+  <div class="reveal relative z-10 max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop text-center">
+    <div class="max-w-3xl mx-auto flex flex-col items-center gap-6">
+      <h2 class="font-display-lg font-bold text-headline-lg md:text-[40px] text-white leading-tight" data-i18n="about_cta_title">Ready to Power Your Future?</h2>
+      <p class="font-body-md text-body-lg text-slate-400 max-w-xl mx-auto" data-i18n="about_cta_desc">
+        Join the thousands of property owners who have already switched to clean, affordable energy. Get a free consultation with our expert engineers today.
+      </p>
+      <a href="contact.html" class="inline-block bg-primary text-on-primary font-bold text-[15px] px-10 py-4 rounded-lg btn-premium hover:opacity-90 transition-all duration-300 mt-2" data-i18n="about_cta_btn">
+        Book Your Free Consultation
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- Shared Component: Footer -->
+<footer class="bg-[#0b1c30] border-t border-white/10 pt-16 pb-8 w-full mt-auto">
+  <div class="max-w-[1440px] mx-auto px-margin-desktop max-md:px-margin-mobile">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+      <!-- Brand Column -->
+      <div class="flex flex-col gap-6">
+        <a class="flex items-center" href="index.html">
+          <img src="mysolarlogonew.png" alt="mysolar.id logo" class="h-12 md:h-14 w-auto object-contain hover:opacity-80 transition-all duration-300"/>
+        </a>
+        <p class="font-body-md text-slate-400 max-w-xs" data-i18n="footer_desc">
+          Leading the way toward a brighter, more sustainable Indonesia through advanced solar hybrid systems and storage solutions.
+        </p>
+        <div class="flex gap-4">
+          <a href="#" class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary transition-all duration-300">
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="#" class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary transition-all duration-300">
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.34 2.88 2.88 0 0 1 2.9-3.93 2.92 2.92 0 0 1 1.66.53V9.81a6.35 6.35 0 0 0-4.56-.25 6.32 6.32 0 0 0-4.24 7.28 6.3 6.3 0 0 0 5.75 4.96 6.34 6.34 0 0 0 6.64-5.38 6.33 6.33 0 0 0 .58-2.65V9.08a8.23 8.23 0 0 0 5.66 2.21V7.83a4.84 4.84 0 0 1-1.97-1.14z"/></svg>
+          </a>
+          <a href="#" class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary transition-all duration-300">
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Pages Column -->
+      <div class="flex flex-col gap-6">
+        <h4 class="font-bold text-[14px] text-white uppercase tracking-widest font-bold" data-i18n="footer_pages">Pages</h4>
+        <nav class="flex flex-col gap-4">
+          <a href="index.html" class="font-body-md text-slate-400 hover:text-primary-fixed transition-colors">Home</a>
+          <a href="about.html" class="font-body-md text-slate-400 hover:text-primary-fixed transition-colors">About Us</a>
+          <a href="how-it-works.html" class="font-body-md text-slate-400 hover:text-primary-fixed transition-colors">How it Works</a>
+          <a href="ownership.html" class="font-body-md text-slate-400 hover:text-primary-fixed transition-colors" data-i18n="nav_ownership">Ownership Models</a>
+        </nav>
+      </div>
+
+      <!-- Quick Links Column -->
+      <div class="flex flex-col gap-6">
+        <h4 class="font-bold text-[14px] text-white uppercase tracking-widest font-bold" data-i18n="footer_quick_links">Quick Links</h4>
+        <nav class="flex flex-col gap-4">
+          <a href="contact.html" class="font-body-md text-slate-400 hover:text-primary-fixed transition-colors">Contact Us</a>
+          <a href="#" class="font-body-md text-slate-400 hover:text-primary-fixed transition-colors">Privacy Policy</a>
+          <a href="#" class="font-body-md text-slate-400 hover:text-primary-fixed transition-colors">Terms of Service</a>
+        </nav>
+      </div>
+
+      <!-- Contact Column -->
+      <div class="flex flex-col gap-6">
+        <h4 class="font-bold text-[14px] text-white uppercase tracking-widest font-bold" data-i18n="footer_contact">Contact</h4>
+        <div class="flex flex-col gap-4">
+          <div class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary text-[20px]">mail</span>
+            <a href="mailto:mysolar.id@gmail.com" class="font-body-md text-slate-400 hover:text-primary-fixed transition-colors">mysolar.id@gmail.com</a>
+          </div>
+          <div class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-primary fill-current mt-0.5" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.888-.788-1.487-1.761-1.662-2.06-.175-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            <span class="font-body-md text-slate-400">+62 813 7135 2788</span>
+          </div>
+          <div class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary text-[20px]">location_on</span>
+            <span class="font-body-md text-slate-400">Anggrek Mas 3 Blok A6 37, Batam Center</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
+      <p class="font-body-md text-label-sm text-slate-400" data-i18n="footer_rights">
+        © 2024 mysolar.id. All rights reserved.
+      </p>
+      <p class="font-body-md text-label-sm text-slate-400" data-i18n="footer_tagline">
+        Built for a Sustainable Indonesia
+      </p>
+    </div>
+  </div>
+</footer>
+<script src="main.js" defer></script>
+</body>
+</html>
